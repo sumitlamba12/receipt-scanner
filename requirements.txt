@@ -1,0 +1,5 @@
+opencv-python==5.0.0.93
+numpy==2.4.6
+pyzbar==0.1.9
+pytesseract==0.3.13
+watchdog==6.0.0

@@ -1,0 +1,17 @@
+# Runtime data - receipts, logs and the audit DB stay on each machine
+app/logs/
+app/processed/
+app/needs_review/
+app/incoming/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Editor / OS
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
