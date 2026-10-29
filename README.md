@@ -2,7 +2,7 @@
 
 Watches `app\incoming\` for receipt photos, reads the tracking number (barcode first, OCR fallback), and moves each image to:
 
-- `app\processed\` - renamed to `<tracking number>_<barcode|ocr>.<ext>`
+- `app\processed\` - renamed to `<tracking number>.<ext>` (e.g. `80109603.jpeg`)
 - `app\needs_review\` - could not be read, check by hand
 
 Every result is recorded in `app\logs\receipts.db`; logs are in `app\logs\app.log`.

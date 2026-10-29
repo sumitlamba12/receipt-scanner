@@ -33,11 +33,12 @@ def _unique_destination(directory: str, filename: str) -> str:
 def move_to_processed(image_path: str, value: str, source: str) -> str:
     """Rename/move a successfully decoded image into PROCESSED_DIR.
 
-    Filename format: <sanitized_value>_<source><ext>, e.g. 1Z999AA1_barcode.jpg
+    Filename format: <sanitized_value><ext>, e.g. 1Z999AA1.jpg. The source
+    (barcode/ocr) is not in the name; it is recorded in the audit DB instead.
     """
     os.makedirs(config.PROCESSED_DIR, exist_ok=True)
     ext = os.path.splitext(image_path)[1]
-    filename = f"{_sanitize(value)}_{source}{ext}"
+    filename = f"{_sanitize(value)}{ext}"
     dest = _unique_destination(config.PROCESSED_DIR, filename)
 
     shutil.move(image_path, dest)

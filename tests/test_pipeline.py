@@ -35,7 +35,7 @@ class TestFileHandler(unittest.TestCase):
         path = self._make_dummy_image()
         dest = file_handler.move_to_processed(path, "1Z 999-AA1!", "barcode")
         self.assertTrue(os.path.exists(dest))
-        self.assertIn("1Z_999-AA1_barcode.jpg", dest)
+        self.assertTrue(dest.endswith("1Z_999-AA1.jpg"))
 
     def test_move_to_processed_avoids_overwrite(self):
         path1 = self._make_dummy_image("a.jpg")
